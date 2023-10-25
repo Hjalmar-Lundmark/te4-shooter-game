@@ -20,6 +20,7 @@ export default class Player {
     this.autoFire = false
     this.shootTimer = 0
     this.shootInterval = 400
+    this.gunImg = document.getElementById('gun')
     // this.ammoTimer = 0
     // this.ammoInterval = 5000
     this.reloading = false
@@ -112,6 +113,19 @@ export default class Player {
       context.moveTo(this.x + this.width / 2, this.y + this.height / 2)
       context.lineTo(x, y)
       context.stroke()
+
+      // No clue what these do
+      context.translate(this.game.width, this.game.height)
+      context.rotate(angle)
+      context.drawImage(
+        this.gunImg,
+        -this.x / 2,
+        -this.y / 2,
+        this.x,
+        this.y
+      )
+      context.rotate(-angle)
+      context.translate(-this.game.width, -this.game.height)
     }
 
     this.projectiles.forEach((projectile) => {
