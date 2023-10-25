@@ -11,5 +11,6 @@ export default class Candy extends Enemy {
     this.lives = 1
     this.color = '#0f0'
     this.type = 'candy'
+    this.damage = 0
   }
 }

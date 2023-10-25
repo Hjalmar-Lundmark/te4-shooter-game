@@ -54,7 +54,7 @@ export default class Game {
     this.enemies.forEach((enemy) => {
       enemy.update(this.player)
       if (this.checkCollision(this.player, enemy)) {
-        this.player.lives--
+        this.player.lives -= enemy.damage
         enemy.markedForDeletion = true
         this.player.kills++
         if (enemy.type === 'candy') {
@@ -69,7 +69,11 @@ export default class Game {
             enemy.markedForDeletion = true
             this.player.kills++
           }
-          projectile.markedForDeletion = true
+          if (projectile.pierce > 0) {
+            projectile.pierce--
+          } else {
+            projectile.markedForDeletion = true
+          }
         }
       })
     })

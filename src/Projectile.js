@@ -10,6 +10,7 @@ export default class Projectile {
     this.speed = 400
     this.damage = 1
     this.markedForDeletion = false
+    this.pierce = 2
   }
 
   update(deltaTime) {

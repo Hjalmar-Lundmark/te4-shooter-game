@@ -8,6 +8,8 @@ export default class Enemy {
     this.markedForDeletion = false
     this.color = color
     this.type = 'enemy'
+
+    this.damage = 1
   }
 
   update() {
