@@ -40,8 +40,8 @@ export default class Game {
       } else {
         x = Math.random() * this.width // if on bottom edge, randomize x position
       }
-      if (Math.random() < 0.2) {
-        this.enemies.push(new Candy(this, x, y))
+      if (Math.random() < 0.04) {
+        this.enemies.push(new Candy(this, Math.random() * this.width, y))
       } else {
         this.enemies.push(new Pumpkin(this, x, y))
       }
