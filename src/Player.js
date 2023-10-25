@@ -14,10 +14,13 @@ export default class Player {
     this.speedY = 0
     this.maxSpeed = 6
 
-    this.maxAmmo = 20
-    this.ammo = 20
-    this.ammoTimer = 0
-    this.ammoInterval = 5000
+    this.maxAmmo = 10
+    this.ammo = 10
+    // this.ammoTimer = 0
+    // this.ammoInterval = 5000
+    this.reloading = false
+    this.reloadTimer = 0
+    this.reloadInterval = 2000
 
     this.lives = 10
     this.kills = 0
@@ -53,11 +56,27 @@ export default class Player {
     this.y += this.speedY
     this.x += this.speedX
 
-    if (this.ammoTimer > this.ammoInterval && this.ammo < this.maxAmmo) {
-      this.ammoTimer = 0
-      this.ammo++
-    } else {
-      this.ammoTimer += deltaTime
+    // if (this.ammoTimer > this.ammoInterval && this.ammo < this.maxAmmo) {
+    //   this.ammoTimer = 0
+    //   this.ammo++
+    // } else {
+    //   this.ammoTimer += deltaTime
+    // }
+
+    if (this.game.keys.includes('r') && this.ammo < this.maxAmmo) {
+      this.reloading = true
+    }
+
+    if (this.reloading) {
+      if (this.reloadTimer > this.reloadInterval) {
+        this.reloadTimer = 0
+        this.ammo = this.maxAmmo
+        if (this.ammo >= this.maxAmmo) {
+          this.reloading = false
+        }
+      } else {
+        this.reloadTimer += deltaTime
+      }
     }
 
     // projectiles
@@ -100,7 +119,7 @@ export default class Player {
       mouseX - (this.x + this.width / 2)
     )
 
-    if (this.ammo > 0) {
+    if (this.ammo > 0 && !this.reloading) {
       this.ammo--
       this.projectiles.push(
         new Projectile(
