@@ -23,12 +23,12 @@ export default class UserInterface {
     for (let i = 0; i < this.game.player.ammo; i++) {
       x += 'I'
     }
-    context.fillText('Ammo: ' + x, 20, 120)
+    context.fillText('Ammo: ' + x, 20, this.game.height - 50)
 
     if (!this.game.player.reloading) {
-      context.fillText(`Press r to reload: ${this.game.player.reloadTimer} `, 20, 150)
+      context.fillText(`Press r to reload: ${this.game.player.reloadTimer} `, 20, this.game.height - 20)
     } else {
-      context.fillText(`Reloading: ${((this.game.player.reloadInterval - this.game.player.reloadTimer) / 1000).toFixed(1)} `, 20, 150)
+      context.fillText(`Reloading: ${((this.game.player.reloadInterval - this.game.player.reloadTimer) / 1000).toFixed(1)} `, 20, this.game.height - 20)
     }
 
     if (this.game.player.ammo === 0) {
