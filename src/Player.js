@@ -17,9 +17,10 @@ export default class Player {
     this.maxAmmo = 20
     this.ammo = 20
     this.ammoTimer = 0
-    this.ammoInterval = 500
+    this.ammoInterval = 5000
 
     this.lives = 10
+    this.kills = 0
   }
 
   update(deltaTime) {
@@ -107,6 +108,18 @@ export default class Player {
           this.x + this.width / 2,
           this.y + this.height / 2,
           angle
+        ),
+        new Projectile(
+          this.game,
+          this.x + this.width / 2,
+          this.y + this.height / 2,
+          angle + 0.1
+        ),
+        new Projectile(
+          this.game,
+          this.x + this.width / 2,
+          this.y + this.height / 2,
+          angle - 0.1
         )
       )
     } else {

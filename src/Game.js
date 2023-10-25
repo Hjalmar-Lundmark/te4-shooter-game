@@ -18,7 +18,7 @@ export default class Game {
     this.gameTime = 0
     this.enemies = []
     this.enemyTimer = 0
-    this.enemyInterval = 1000
+    this.enemyInterval = 500
 
     this.player = new Player(this)
   }
@@ -56,6 +56,7 @@ export default class Game {
       if (this.checkCollision(this.player, enemy)) {
         this.player.lives--
         enemy.markedForDeletion = true
+        this.player.kills++
         if (enemy.type === 'candy') {
           this.player.ammo += 5
         }
@@ -66,6 +67,7 @@ export default class Game {
             enemy.lives -= projectile.damage
           } else {
             enemy.markedForDeletion = true
+            this.player.kills++
           }
           projectile.markedForDeletion = true
         }
