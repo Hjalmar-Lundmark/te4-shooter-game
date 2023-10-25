@@ -18,6 +18,7 @@ export default class Game {
     this.gravity = 1
     this.debug = false
     this.gameTime = 0
+    this.points = 0
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 500
@@ -30,6 +31,9 @@ export default class Game {
       if (!this.gameOver) {
         this.gameTime += deltaTime
       }
+
+      // calculates points
+      this.points = ((this.player.kills * 9 + this.gameTime / 1000) / 2.38 + 22 - this.player.maxAmmo).toFixed(0)
 
       if (this.enemyTimer > this.enemyInterval) {
         let x = Math.random() < 0.5 ? 0 : this.width // spawn on left or right edge
@@ -45,6 +49,8 @@ export default class Game {
         }
         if (Math.random() < 0.04) {
           this.enemies.push(new Candy(this, Math.random() * this.width, y))
+        } else if (false) {
+          // spawn a boss
         } else {
           this.enemies.push(new Pumpkin(this, x, y))
         }

@@ -18,6 +18,7 @@ export default class UserInterface {
     context.fillText(`Lives: ${this.game.player.lives}`, 20, 30)
     context.fillText(`Time: ${(this.game.gameTime * 0.001).toFixed(1)} `, 20, 60)
     context.fillText(`Kills: ${this.game.player.kills} `, 20, 90)
+    context.fillText(`Points: ${this.game.points} `, 20, 120)
 
     let x = ''
     for (let i = 0; i < this.game.player.ammo; i++) {
