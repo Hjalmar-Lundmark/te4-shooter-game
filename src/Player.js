@@ -126,7 +126,7 @@ export default class Player {
       mouseX - (this.x + this.width / 2)
     )
 
-    if (this.ammo > 0 && !this.reloading && this.shootTimer > this.shootInterval) {
+    if (this.ammo > 0 && !this.reloading && this.shootTimer > this.shootInterval && !this.game.paused) {
       this.shootTimer = 0
       this.ammo--
       this.projectiles.push(

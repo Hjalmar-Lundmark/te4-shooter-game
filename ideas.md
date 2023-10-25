@@ -8,13 +8,11 @@
 4. Explosives?
 
 ## Bugs / todo
-1. Pause/gameover screen 
-2. Pierce weapons doing to much damage
+1. Pierce weapons doing to much damage
 3. Placing of healthcrates 
 4. Low ammo warning?
 5. Bar or symbols for health, ammo and such
 6. Screen goes red when hit?
-7. Border where you can't walk out off.
 8. Skins, icons
 9. Points, kills+time?
 9. Change enemy spawnpoints
