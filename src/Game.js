@@ -13,6 +13,8 @@ export default class Game {
     this.keys = []
     this.enemies = []
     this.gameOver = false
+    this.paused = false
+    this.started = false
     this.gravity = 1
     this.debug = false
     this.gameTime = 0
@@ -24,68 +26,70 @@ export default class Game {
   }
 
   update(deltaTime) {
-    if (!this.gameOver) {
-      this.gameTime += deltaTime
-    }
-
-    if (this.enemyTimer > this.enemyInterval) {
-      let x = Math.random() < 0.5 ? 0 : this.width // spawn on left or right edge
-      let y = Math.random() < 0.5 ? 0 : this.height // spawn on top or bottom edge
-      if (x === 0) {
-        y = Math.random() * this.height // if on left edge, randomize y position
-      } else if (x === this.width) {
-        y = Math.random() * this.height // if on right edge, randomize y position
-      } else if (y === 0) {
-        x = Math.random() * this.width // if on top edge, randomize x position
-      } else {
-        x = Math.random() * this.width // if on bottom edge, randomize x position
+    if (!this.paused) {
+      if (!this.gameOver) {
+        this.gameTime += deltaTime
       }
-      if (Math.random() < 0.04) {
-        this.enemies.push(new Candy(this, Math.random() * this.width, y))
-      } else {
-        this.enemies.push(new Pumpkin(this, x, y))
-      }
-      this.enemyTimer = 0
-    } else {
-      this.enemyTimer += deltaTime
-    }
-    this.player.update(deltaTime)
 
-    this.enemies.forEach((enemy) => {
-      enemy.update(this.player)
-      if (this.checkCollision(this.player, enemy)) {
-        this.player.lives -= enemy.damage
-        enemy.markedForDeletion = true
-        this.player.kills++
-        if (enemy.type === 'candy') {
-          this.player.lives++
+      if (this.enemyTimer > this.enemyInterval) {
+        let x = Math.random() < 0.5 ? 0 : this.width // spawn on left or right edge
+        let y = Math.random() < 0.5 ? 0 : this.height // spawn on top or bottom edge
+        if (x === 0) {
+          y = Math.random() * this.height // if on left edge, randomize y position
+        } else if (x === this.width) {
+          y = Math.random() * this.height // if on right edge, randomize y position
+        } else if (y === 0) {
+          x = Math.random() * this.width // if on top edge, randomize x position
+        } else {
+          x = Math.random() * this.width // if on bottom edge, randomize x position
         }
+        if (Math.random() < 0.04) {
+          this.enemies.push(new Candy(this, Math.random() * this.width, y))
+        } else {
+          this.enemies.push(new Pumpkin(this, x, y))
+        }
+        this.enemyTimer = 0
+      } else {
+        this.enemyTimer += deltaTime
       }
-      this.player.projectiles.forEach((projectile) => {
-        if (this.checkCollision(projectile, enemy)) {
-          if (enemy.lives > 1) {
-            enemy.lives -= projectile.damage
-          } else {
-            enemy.markedForDeletion = true
-            this.player.kills++
-          }
-          if (projectile.pierce > 0) {
-            projectile.pierce--
-          } else {
-            projectile.markedForDeletion = true
+      this.player.update(deltaTime)
+
+      this.enemies.forEach((enemy) => {
+        enemy.update(this.player)
+        if (this.checkCollision(this.player, enemy)) {
+          this.player.lives -= enemy.damage
+          enemy.markedForDeletion = true
+          this.player.kills++
+          if (enemy.type === 'candy') {
+            this.player.lives++
           }
         }
+        this.player.projectiles.forEach((projectile) => {
+          if (this.checkCollision(projectile, enemy)) {
+            if (enemy.lives > 1) {
+              enemy.lives -= projectile.damage
+            } else {
+              enemy.markedForDeletion = true
+              this.player.kills++
+            }
+            if (projectile.pierce > 0) {
+              projectile.pierce--
+            } else {
+              projectile.markedForDeletion = true
+            }
+          }
+        })
       })
-    })
-    this.enemies = this.enemies.filter((enemy) => !enemy.markedForDeletion)
+      this.enemies = this.enemies.filter((enemy) => !enemy.markedForDeletion)
+    }
   }
 
   draw(context) {
-    this.ui.draw(context)
     this.player.draw(context)
     this.enemies.forEach((enemy) => {
       enemy.draw(context)
     })
+    this.ui.draw(context)
   }
 
   checkCollision(object1, object2) {

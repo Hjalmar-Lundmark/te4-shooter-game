@@ -20,12 +20,16 @@ export default class InputHandler {
         this.game.keys.push(event.key)
       }
 
-      if (event.key === ' ') {
+      if (event.key === ' ' && !this.game.paused) {
         this.game.player.shoot(this.mouseX, this.mouseY)
       }
 
       if (event.key === 'p') {
         this.game.debug = !this.game.debug
+      }
+
+      if (event.key === 'Escape') {
+        this.game.paused = !this.game.paused
       }
     })
 

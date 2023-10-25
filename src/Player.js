@@ -33,6 +33,7 @@ export default class Player {
   update(deltaTime) {
     if (this.lives <= 0) {
       this.game.gameOver = true
+      this.game.paused = true
     }
 
     this.shootTimer += deltaTime

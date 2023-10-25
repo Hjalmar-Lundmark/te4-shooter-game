@@ -64,6 +64,18 @@ export default class UserInterface {
       )
     }
 
+    if (this.game.paused && !this.game.gameOver) {
+      context.textAlign = 'center'
+      context.fillStyle = 'white'
+      context.globalAlpha = 1
+      context.font = `50px ${this.fontFamily} `
+      context.fillText(
+        'Paused',
+        this.game.width / 2,
+        this.game.height / 2 - 20
+      )
+    }
+
     // debug
     if (this.game.debug) {
       context.font = `15px Arial`
