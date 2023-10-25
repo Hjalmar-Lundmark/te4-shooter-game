@@ -58,7 +58,7 @@ export default class Game {
         enemy.markedForDeletion = true
         this.player.kills++
         if (enemy.type === 'candy') {
-          this.player.ammo += 5
+          this.player.lives++
         }
       }
       this.player.projectiles.forEach((projectile) => {

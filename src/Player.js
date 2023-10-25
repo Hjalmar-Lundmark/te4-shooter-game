@@ -14,8 +14,12 @@ export default class Player {
     this.speedY = 0
     this.maxSpeed = 6
 
-    this.maxAmmo = 10
-    this.ammo = 10
+    this.maxAmmo = 8
+    this.ammo = 8
+    this.weapon = 'shotgun' // shotgun, smg, rifle, sniper, ...
+    this.autoFire = false
+    this.shootTimer = 0
+    this.shootInterval = 400
     // this.ammoTimer = 0
     // this.ammoInterval = 5000
     this.reloading = false
@@ -30,6 +34,8 @@ export default class Player {
     if (this.lives <= 0) {
       this.game.gameOver = true
     }
+
+    this.shootTimer += deltaTime
 
     if (this.game.keys.includes('ArrowLeft') || this.game.keys.includes('a')) {
       this.speedX = -this.maxSpeed
@@ -71,9 +77,7 @@ export default class Player {
       if (this.reloadTimer > this.reloadInterval) {
         this.reloadTimer = 0
         this.ammo = this.maxAmmo
-        if (this.ammo >= this.maxAmmo) {
-          this.reloading = false
-        }
+        this.reloading = false
       } else {
         this.reloadTimer += deltaTime
       }
@@ -119,7 +123,8 @@ export default class Player {
       mouseX - (this.x + this.width / 2)
     )
 
-    if (this.ammo > 0 && !this.reloading) {
+    if (this.ammo > 0 && !this.reloading && this.shootTimer > this.shootInterval) {
+      this.shootTimer = 0
       this.ammo--
       this.projectiles.push(
         new Projectile(
@@ -141,8 +146,6 @@ export default class Player {
           angle - 0.1
         )
       )
-    } else {
-      console.log('out of ammo')
     }
   }
 }

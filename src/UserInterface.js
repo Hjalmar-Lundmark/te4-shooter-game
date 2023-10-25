@@ -22,11 +22,34 @@ export default class UserInterface {
     if (!this.game.player.reloading) {
       context.fillText(`Press r to reload: ${this.game.player.reloadTimer} `, 20, 150)
     } else {
-      context.fillText(`Reloading: ${(this.game.player.reloadTimer).toFixed(0) / 1000} `, 20, 150)
+      context.fillText(`Reloading: ${((this.game.player.reloadInterval - this.game.player.reloadTimer) / 1000).toFixed(1)} `, 20, 150)
+    }
+
+    if (this.game.player.ammo === 0) {
+      context.textAlign = 'center'
+
+      context.globalAlpha = 1 // opacity, TODO make it shift between 0.5 and 1
+
+      context.font = `50px ${this.fontFamily} `
+      if (this.game.player.reloading) {
+        context.fillText(
+          'Reloading!',
+          this.game.width / 2,
+          100
+        )
+      } else {
+        context.fillText(
+          'Out of ammo! Reload!',
+          this.game.width / 2,
+          100
+        )
+      }
     }
 
     if (this.game.gameOver) {
       context.textAlign = 'center'
+      context.fillStyle = 'white'
+      context.globalAlpha = 1
       context.font = `50px ${this.fontFamily} `
       context.fillText(
         'Game over',
@@ -62,6 +85,13 @@ export default class UserInterface {
         this.game.width - 20,
         175
       )
+      if (this.game.player.shootTimer > this.game.player.shootInterval) {
+        context.fillText(
+          `Ready to shoot`,
+          this.game.width - 20,
+          200
+        )
+      }
     }
 
     context.restore()
