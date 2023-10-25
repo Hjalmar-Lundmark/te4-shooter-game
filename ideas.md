@@ -14,5 +14,4 @@
 5. Bar or symbols for health, ammo and such
 6. Screen goes red when hit?
 8. Skins, icons
-9. Points, kills+time?
 9. Change enemy spawnpoints
