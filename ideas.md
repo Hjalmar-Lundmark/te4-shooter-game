@@ -16,3 +16,4 @@
 6. Screen goes red when hit?
 7. Border where you can't walk out off.
 8. Skins, icons
+9. Points, kills+time?
