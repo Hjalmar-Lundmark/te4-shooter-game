@@ -6,6 +6,7 @@
 2. Different kinds of enemies. Ranged, tank, etc
 3. Waves with increasing numbers of enemies? 
 4. Explosives?
+5. Reload instead of ammo regen
 
 ## Bugs / todo
 1. Pierce weapons doing to much damage

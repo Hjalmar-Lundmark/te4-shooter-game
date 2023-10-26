@@ -21,8 +21,6 @@ export default class Player {
     this.shootTimer = 0
     this.shootInterval = 400
     this.gunImg = document.getElementById('gun')
-    // this.ammoTimer = 0
-    // this.ammoInterval = 5000
     this.reloading = false
     this.reloadTimer = 0
     this.reloadInterval = 2000
@@ -66,12 +64,9 @@ export default class Player {
     this.y += this.speedY
     this.x += this.speedX
 
-    // if (this.ammoTimer > this.ammoInterval && this.ammo < this.maxAmmo) {
-    //   this.ammoTimer = 0
-    //   this.ammo++
-    // } else {
-    //   this.ammoTimer += deltaTime
-    // }
+    if (this.game.keys.includes(' ') || this.game.keys.includes(0) && !this.game.paused) {
+      this.shoot(this.game.input.mouseX, this.game.input.mouseY)
+    }
 
     if (this.game.keys.includes('r') && this.ammo < this.maxAmmo) {
       this.reloading = true
@@ -115,6 +110,7 @@ export default class Player {
       context.stroke()
 
       // No clue what these do
+      // TODO: fix
       context.translate(this.game.width, this.game.height)
       context.rotate(angle)
       context.drawImage(

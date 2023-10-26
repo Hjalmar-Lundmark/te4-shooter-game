@@ -14,15 +14,16 @@ export default class InputHandler {
           event.key === 'a' ||
           event.key === 's' ||
           event.key === 'd' ||
-          event.key === 'r') &&
+          event.key === 'r' ||
+          event.key === ' ') &&
         this.game.keys.indexOf(event.key) === -1
       ) {
         this.game.keys.push(event.key)
       }
 
-      if (event.key === ' ' && !this.game.paused) {
-        this.game.player.shoot(this.mouseX, this.mouseY)
-      }
+      // if (event.key === ' ' && !this.game.paused) {
+      //   this.game.player.shoot(this.mouseX, this.mouseY)
+      // }
 
       if (event.key === 'p') {
         this.game.debug = !this.game.debug
@@ -44,8 +45,22 @@ export default class InputHandler {
       this.mouseY = event.clientY - this.game.canvasPosition.top
     })
 
+    // window.addEventListener('mousedown', (event) => {
+    //   this.game.player.shoot(this.mouseX, this.mouseY)
+    // })
+
     window.addEventListener('mousedown', (event) => {
-      this.game.player.shoot(this.mouseX, this.mouseY)
+      if (
+        (event.button === 0) && this.game.keys.indexOf(event.button) === -1
+      ) {
+        this.game.keys.push(event.button)
+      }
+    })
+
+    window.addEventListener('mouseup', (event) => {
+      if (this.game.keys.indexOf(event.button) > -1) {
+        this.game.keys.splice(this.game.keys.indexOf(event.button), 1)
+      }
     })
   }
 }
