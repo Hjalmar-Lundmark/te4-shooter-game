@@ -99,6 +99,7 @@ export default class InputHandler {
       ) {
         this.game.start = false
         this.game.paused = false
+
         // weapon: smg
         this.game.player.weapon = 'smg'
         this.game.player.maxAmmo = 30

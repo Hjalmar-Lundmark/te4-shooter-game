@@ -169,7 +169,7 @@ export default class UserInterface {
       )
       context.fillStyle = 'white'
       context.fillText(
-        'Rifle',
+        'Rifle COMING SOON',
         this.game.width / 2 + 125,
         this.game.height / 2 + 30
       )
@@ -183,7 +183,7 @@ export default class UserInterface {
       )
       context.fillStyle = 'white'
       context.fillText(
-        'Sniper',
+        'Sniper COMING SOON',
         this.game.width / 2 + 375,
         this.game.height / 2 + 30
       )
