@@ -38,4 +38,15 @@ export default class Weapon {
     )
   }
 
+  smgShoot(angle) {
+    this.player.projectiles.push(
+      new Projectile(
+        this.game,
+        this.player.x + this.player.width / 2,
+        this.player.y + this.player.height / 2,
+        (angle + Math.random() * 0.1 - 0.05) * 0.9
+      )
+    )
+  }
+
 }

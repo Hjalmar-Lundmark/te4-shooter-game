@@ -100,6 +100,17 @@ export default class InputHandler {
         this.game.start = false
         this.game.paused = false
         // weapon: smg
+        this.game.player.weapon = 'smg'
+        this.game.player.maxAmmo = 30
+        this.game.player.ammo = 30
+        this.game.player.shootInterval = 100
+        this.game.player.reloadInterval = 1500
+        this.game.player.autoFire = true
+        //this.game.player.gunImg = document.getElementById('smg')
+
+        this.game.projectile.pierce = 0
+        this.game.projectile.damage = 1
+        this.game.projectile.speed = 500
       }
     })
 

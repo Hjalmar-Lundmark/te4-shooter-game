@@ -140,26 +140,66 @@ export default class Player {
     if (this.ammo > 0 && !this.reloading && this.shootTimer > this.shootInterval && !this.game.paused) {
       this.shootTimer = 0
       this.ammo--
-      this.projectiles.push(
-        new Projectile(
-          this.game,
-          this.x + this.width / 2,
-          this.y + this.height / 2,
-          angle
-        ),
-        new Projectile(
-          this.game,
-          this.x + this.width / 2,
-          this.y + this.height / 2,
-          angle + 0.1
-        ),
-        new Projectile(
-          this.game,
-          this.x + this.width / 2,
-          this.y + this.height / 2,
-          angle - 0.1
-        )
-      )
+      if (this.weapon === 'shotgun') this.shotgunProj(angle)
+      if (this.weapon === 'smg') this.smgProj(angle)
+      if (this.weapon === 'rifle') this.rifleProj(angle)
+      if (this.weapon === 'sniper') this.sniperProj(angle)
     }
+  }
+
+  shotgunProj(angle) {
+    this.projectiles.push(
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        angle
+      ),
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        angle + 0.1
+      ),
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        angle - 0.1
+      )
+    )
+  }
+
+  smgProj(angle) {
+    this.projectiles.push(
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        (angle + Math.random() - Math.random())
+      )
+    )
+  }
+
+  rifleProj(angle) {
+    this.projectiles.push(
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        angle
+      )
+    )
+  }
+
+  sniperProj(angle) {
+    this.projectiles.push(
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        angle
+      )
+    )
   }
 }
