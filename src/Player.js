@@ -64,6 +64,7 @@ export default class Player {
     this.y += this.speedY
     this.x += this.speedX
 
+    //shoots
     if (this.game.keys.includes(' ') || this.game.keys.includes(0) && !this.game.paused) {
       this.shoot(this.game.input.mouseX, this.game.input.mouseY)
     }

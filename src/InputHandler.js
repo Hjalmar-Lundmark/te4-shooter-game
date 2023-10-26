@@ -45,6 +45,7 @@ export default class InputHandler {
       this.mouseY = event.clientY - this.game.canvasPosition.top
     })
 
+    // single fire weapons?
     // window.addEventListener('mousedown', (event) => {
     //   this.game.player.shoot(this.mouseX, this.mouseY)
     // })
@@ -62,5 +63,12 @@ export default class InputHandler {
         this.game.keys.splice(this.game.keys.indexOf(event.button), 1)
       }
     })
+
+    // could work for single fire weapons
+    // window.addEventListener('keyup', (event) => {
+    //   if (event.key === ' ' && !this.game.paused) {
+    //     this.game.player.shoot(this.mouseX, this.mouseY)
+    //   }
+    // })
   }
 }
