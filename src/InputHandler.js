@@ -77,13 +77,59 @@ export default class InputHandler {
       if (
         event.button === 0 &&
         this.game.start &&
-        this.game.input.mouseX > this.game.width / 2 - 100 &&
-        this.game.input.mouseX < this.game.width / 2 + 100 &&
+        this.game.input.mouseX > this.game.width / 2 - 475 &&
+        this.game.input.mouseX < this.game.width / 2 - 275 &&
         this.game.input.mouseY > this.game.height / 2 - 50 &&
         this.game.input.mouseY < this.game.height / 2 + 50
       ) {
         this.game.start = false
         this.game.paused = false
+        // weapon: shotgun
+      }
+    })
+
+    window.addEventListener('mousedown', (event) => {
+      if (
+        event.button === 0 &&
+        this.game.start &&
+        this.game.input.mouseX > this.game.width / 2 - 225 &&
+        this.game.input.mouseX < this.game.width / 2 - 25 &&
+        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY < this.game.height / 2 + 50
+      ) {
+        this.game.start = false
+        this.game.paused = false
+        // weapon: smg
+      }
+    })
+
+    window.addEventListener('mousedown', (event) => {
+      if (
+        event.button === 0 &&
+        this.game.start &&
+        this.game.input.mouseX > this.game.width / 2 + 25 &&
+        this.game.input.mouseX < this.game.width / 2 + 225 &&
+        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY < this.game.height / 2 + 50
+      ) {
+        this.game.start = false
+        this.game.paused = false
+        // weapon: rifle
+      }
+    })
+
+    window.addEventListener('mousedown', (event) => {
+      if (
+        event.button === 0 &&
+        this.game.start &&
+        this.game.input.mouseX > this.game.width / 2 + 275 &&
+        this.game.input.mouseX < this.game.width / 2 + 475 &&
+        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY < this.game.height / 2 + 50
+      ) {
+        this.game.start = false
+        this.game.paused = false
+        // weapon: sniper
       }
     })
   }

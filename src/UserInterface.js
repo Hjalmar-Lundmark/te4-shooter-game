@@ -134,7 +134,7 @@ export default class UserInterface {
       context.font = `20px ${this.fontFamily} `
       context.fillStyle = 'green'
       context.fillRect(
-        this.game.width / 2 - 450,
+        this.game.width / 2 - 475,
         this.game.height / 2,
         200,
         50
@@ -142,13 +142,13 @@ export default class UserInterface {
       context.fillStyle = 'white'
       context.fillText(
         'Shotgun',
-        this.game.width / 2 - 350,
+        this.game.width / 2 - 375,
         this.game.height / 2 + 30
       )
 
       context.fillStyle = 'green'
       context.fillRect(
-        this.game.width / 2 - 200,
+        this.game.width / 2 - 225,
         this.game.height / 2,
         200,
         50
@@ -156,13 +156,13 @@ export default class UserInterface {
       context.fillStyle = 'white'
       context.fillText(
         'SMG',
-        this.game.width / 2 - 100,
+        this.game.width / 2 - 125,
         this.game.height / 2 + 30
       )
 
       context.fillStyle = 'green'
       context.fillRect(
-        this.game.width / 2 + 50,
+        this.game.width / 2 + 25,
         this.game.height / 2,
         200,
         50
@@ -170,13 +170,13 @@ export default class UserInterface {
       context.fillStyle = 'white'
       context.fillText(
         'Rifle',
-        this.game.width / 2 + 150,
+        this.game.width / 2 + 125,
         this.game.height / 2 + 30
       )
 
       context.fillStyle = 'green'
       context.fillRect(
-        this.game.width / 2 + 300,
+        this.game.width / 2 + 275,
         this.game.height / 2,
         200,
         50
@@ -184,7 +184,7 @@ export default class UserInterface {
       context.fillStyle = 'white'
       context.fillText(
         'Sniper',
-        this.game.width / 2 + 400,
+        this.game.width / 2 + 375,
         this.game.height / 2 + 30
       )
     }
