@@ -1,8 +1,8 @@
 export default class Projectile {
-  constructor(game, x, y, angle, speed, dmg, pierce, timeout) {
+  constructor(game, x, y, width, height, angle, speed, dmg, pierce, timeout) {
     this.game = game
-    this.width = 10
-    this.height = 4
+    this.width = width
+    this.height = height
     this.x = x
     this.y = y
     this.angle = angle

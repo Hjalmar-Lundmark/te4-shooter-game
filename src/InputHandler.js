@@ -146,10 +146,10 @@ export default class InputHandler {
         this.game.paused = false
         // weapon: sniper
         this.game.player.weapon = 'sniper'
-        this.game.player.maxAmmo = 5
-        this.game.player.ammo = 5
+        this.game.player.maxAmmo = 6
+        this.game.player.ammo = 6
         this.game.player.shootInterval = 1000
-        this.game.player.reloadInterval = 3000
+        this.game.player.reloadInterval = 2400
         this.game.player.autoFire = false
         //this.game.player.gunImg = document.getElementById('sniper')
       }
