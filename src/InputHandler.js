@@ -104,15 +104,10 @@ export default class InputHandler {
         this.game.player.weapon = 'smg'
         this.game.player.maxAmmo = 35
         this.game.player.ammo = 35
-        this.game.player.shootInterval = 100
+        this.game.player.shootInterval = 75
         this.game.player.reloadInterval = 1500
         this.game.player.autoFire = true
         //this.game.player.gunImg = document.getElementById('smg')
-
-        // not sure if these work
-        this.game.player.projectile.pierce = 0
-        this.game.player.projectile.damage = 1
-        this.game.player.projectile.speed = 500
       }
     })
 
@@ -128,6 +123,13 @@ export default class InputHandler {
         this.game.start = false
         this.game.paused = false
         // weapon: rifle
+        this.game.player.weapon = 'rifle'
+        this.game.player.maxAmmo = 15
+        this.game.player.ammo = 15
+        this.game.player.shootInterval = 300
+        this.game.player.reloadInterval = 2200
+        this.game.player.autoFire = true
+        //this.game.player.gunImg = document.getElementById('rifle')
       }
     })
 
@@ -143,6 +145,13 @@ export default class InputHandler {
         this.game.start = false
         this.game.paused = false
         // weapon: sniper
+        this.game.player.weapon = 'sniper'
+        this.game.player.maxAmmo = 5
+        this.game.player.ammo = 5
+        this.game.player.shootInterval = 1000
+        this.game.player.reloadInterval = 3000
+        this.game.player.autoFire = false
+        //this.game.player.gunImg = document.getElementById('sniper')
       }
     })
   }

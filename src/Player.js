@@ -153,19 +153,31 @@ export default class Player {
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        angle
+        angle,
+        400,
+        1,
+        1,
+        1000
       ),
       new Projectile(
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        angle + 0.1
+        angle + 0.1,
+        400,
+        1,
+        1,
+        1000
       ),
       new Projectile(
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        angle - 0.1
+        angle - 0.1,
+        400,
+        1,
+        1,
+        1000
       )
     )
   }
@@ -176,7 +188,11 @@ export default class Player {
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        angle + (Math.random() - Math.random()) * 0.6
+        angle + (Math.random() - Math.random()) * 0.6,
+        500,
+        1,
+        0,
+        1000
       )
     )
   }
@@ -187,7 +203,11 @@ export default class Player {
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        angle
+        angle,
+        600,
+        3,
+        3,
+        1500
       )
     )
   }
@@ -198,7 +218,11 @@ export default class Player {
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        angle
+        angle,
+        800,
+        5,
+        7,
+        2000
       )
     )
   }

@@ -1,16 +1,17 @@
 export default class Projectile {
-  constructor(game, x, y, angle) {
+  constructor(game, x, y, angle, speed, dmg, pierce, timeout) {
     this.game = game
     this.width = 10
     this.height = 4
     this.x = x
     this.y = y
     this.angle = angle
-
-    this.speed = 400
-    this.damage = 1
     this.markedForDeletion = false
-    this.pierce = 1
+
+    this.speed = speed
+    this.damage = dmg
+    this.pierce = pierce
+    this.timeout = timeout
   }
 
   update(deltaTime) {
