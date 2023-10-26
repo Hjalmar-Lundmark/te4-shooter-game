@@ -176,7 +176,7 @@ export default class Player {
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        (angle + Math.random() - Math.random())
+        angle + (Math.random() - Math.random()) * 0.6
       )
     )
   }

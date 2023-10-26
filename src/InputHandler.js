@@ -102,8 +102,8 @@ export default class InputHandler {
 
         // weapon: smg
         this.game.player.weapon = 'smg'
-        this.game.player.maxAmmo = 30
-        this.game.player.ammo = 30
+        this.game.player.maxAmmo = 35
+        this.game.player.ammo = 35
         this.game.player.shootInterval = 100
         this.game.player.reloadInterval = 1500
         this.game.player.autoFire = true
