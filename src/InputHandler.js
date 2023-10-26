@@ -28,7 +28,7 @@ export default class InputHandler {
         this.game.debug = !this.game.debug
       }
 
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && !this.game.gameOver) {
         this.game.paused = !this.game.paused
       }
     })
