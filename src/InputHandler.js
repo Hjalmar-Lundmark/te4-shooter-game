@@ -109,9 +109,10 @@ export default class InputHandler {
         this.game.player.autoFire = true
         //this.game.player.gunImg = document.getElementById('smg')
 
-        this.game.projectile.pierce = 0
-        this.game.projectile.damage = 1
-        this.game.projectile.speed = 500
+        // not sure if these work
+        this.game.player.projectile.pierce = 0
+        this.game.player.projectile.damage = 1
+        this.game.player.projectile.speed = 500
       }
     })
 

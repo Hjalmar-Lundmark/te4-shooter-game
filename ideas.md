@@ -10,9 +10,9 @@
 
 ## Bugs / todo
 1. Pierce weapons doing to much damage
-3. Placing of healthcrates 
 4. Low ammo warning?
 5. Bar or symbols for health, ammo and such
 6. Screen goes red when hit?
 8. Skins, icons
 9. Change enemy spawnpoints
+9. enemy amount ramping up
