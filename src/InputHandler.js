@@ -70,5 +70,21 @@ export default class InputHandler {
     //     this.game.player.shoot(this.mouseX, this.mouseY)
     //   }
     // })
+
+
+    // start buttons
+    window.addEventListener('mousedown', (event) => {
+      if (
+        event.button === 0 &&
+        this.game.start &&
+        this.game.input.mouseX > this.game.width / 2 - 100 &&
+        this.game.input.mouseX < this.game.width / 2 + 100 &&
+        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY < this.game.height / 2 + 50
+      ) {
+        this.game.start = false
+        this.game.paused = false
+      }
+    })
   }
 }

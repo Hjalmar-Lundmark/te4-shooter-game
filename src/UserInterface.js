@@ -65,7 +65,7 @@ export default class UserInterface {
       )
     }
 
-    if (this.game.paused && !this.game.gameOver) {
+    if (this.game.paused && !this.game.gameOver && !this.game.start) {
       context.textAlign = 'center'
       context.fillStyle = 'white'
       context.globalAlpha = 1
@@ -111,6 +111,82 @@ export default class UserInterface {
           200
         )
       }
+    }
+
+    if (this.game.start) {
+      context.textAlign = 'center'
+      context.fillStyle = 'white'
+      context.globalAlpha = 1
+      context.font = `50px ${this.fontFamily} `
+      context.fillStyle = 'orange'
+      context.fillRect(
+        0,
+        0,
+        this.game.width,
+        this.game.height
+      )
+      context.fillStyle = 'white'
+      context.fillText(
+        'Choose weapon to start',
+        this.game.width / 2,
+        this.game.height / 2 - 20
+      )
+      context.font = `20px ${this.fontFamily} `
+      context.fillStyle = 'green'
+      context.fillRect(
+        this.game.width / 2 - 450,
+        this.game.height / 2,
+        200,
+        50
+      )
+      context.fillStyle = 'white'
+      context.fillText(
+        'Shotgun',
+        this.game.width / 2 - 350,
+        this.game.height / 2 + 30
+      )
+
+      context.fillStyle = 'green'
+      context.fillRect(
+        this.game.width / 2 - 200,
+        this.game.height / 2,
+        200,
+        50
+      )
+      context.fillStyle = 'white'
+      context.fillText(
+        'SMG',
+        this.game.width / 2 - 100,
+        this.game.height / 2 + 30
+      )
+
+      context.fillStyle = 'green'
+      context.fillRect(
+        this.game.width / 2 + 50,
+        this.game.height / 2,
+        200,
+        50
+      )
+      context.fillStyle = 'white'
+      context.fillText(
+        'Rifle',
+        this.game.width / 2 + 150,
+        this.game.height / 2 + 30
+      )
+
+      context.fillStyle = 'green'
+      context.fillRect(
+        this.game.width / 2 + 300,
+        this.game.height / 2,
+        200,
+        50
+      )
+      context.fillStyle = 'white'
+      context.fillText(
+        'Sniper',
+        this.game.width / 2 + 400,
+        this.game.height / 2 + 30
+      )
     }
 
     context.restore()
