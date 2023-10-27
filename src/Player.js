@@ -184,6 +184,30 @@ export default class Player {
         1,
         1,
         1000
+      ),
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        10,
+        4,
+        angle + 0.05,
+        400,
+        1,
+        1,
+        1000
+      ),
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        10,
+        4,
+        angle - 0.05,
+        400,
+        1,
+        1,
+        1000
       )
     )
   }

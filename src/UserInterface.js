@@ -111,6 +111,11 @@ export default class UserInterface {
           200
         )
       }
+      context.fillText(
+        `enemyInterval: ${this.game.enemyInterval.toFixed(0)} `,
+        this.game.width - 20,
+        225
+      )
     }
 
     if (this.game.start) {

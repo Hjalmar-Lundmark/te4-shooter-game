@@ -55,6 +55,7 @@ export default class Game {
           this.enemies.push(new Pumpkin(this, x, y))
         }
         this.enemyTimer = 0
+        this.enemyInterval -= 0.5 // maybe lower this a little
       } else {
         this.enemyTimer += deltaTime
       }
