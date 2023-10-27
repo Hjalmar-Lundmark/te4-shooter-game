@@ -20,7 +20,7 @@ export default class Player {
     this.autoFire = false
     this.shootTimer = 0
     this.shootInterval = 400
-    this.gunImg = document.getElementById('gun')
+    this.gunImg = document.getElementById('shotgun')
     this.reloading = false
     this.reloadTimer = 0
     this.reloadInterval = 2000
@@ -95,34 +95,31 @@ export default class Player {
   draw(context) {
     context.fillStyle = '#0ff'
     context.fillRect(this.x, this.y, this.width, this.height)
+    const dx = this.game.input.mouseX - (this.x + this.width / 2)
+    const dy = this.game.input.mouseY - (this.y + this.height / 2)
+    const maxLength = 60
+    const angle = Math.atan2(dy, dx)
+    const x = this.x + this.width / 2 + maxLength * Math.cos(angle)
+    const y = this.y + this.height / 2 + maxLength * Math.sin(angle)
+    context.translate(this.x + this.width / 2, this.y + this.height / 2)
+    context.rotate(angle)
+    context.drawImage(
+      this.gunImg,
+      -100 / 2,
+      -50 / 2,
+      100,
+      50
+    )
+    context.rotate(-angle)
+    context.translate(-(this.x + this.width / 2), -(this.y + this.height / 2))
     if (this.game.debug) {
       context.strokeStyle = '#000'
       context.strokeRect(this.x, this.y, this.width, this.height)
       context.lineWidth = 1
       context.beginPath()
-      const dx = this.game.input.mouseX - (this.x + this.width / 2)
-      const dy = this.game.input.mouseY - (this.y + this.height / 2)
-      const maxLength = 60
-      const angle = Math.atan2(dy, dx)
-      const x = this.x + this.width / 2 + maxLength * Math.cos(angle)
-      const y = this.y + this.height / 2 + maxLength * Math.sin(angle)
       context.moveTo(this.x + this.width / 2, this.y + this.height / 2)
       context.lineTo(x, y)
       context.stroke()
-
-      // No clue what these do
-      // TODO: fix
-      context.translate(this.game.width, this.game.height)
-      context.rotate(angle)
-      context.drawImage(
-        this.gunImg,
-        -this.x / 2,
-        -this.y / 2,
-        this.x,
-        this.y
-      )
-      context.rotate(-angle)
-      context.translate(-this.game.width, -this.game.height)
     }
 
     this.projectiles.forEach((projectile) => {
