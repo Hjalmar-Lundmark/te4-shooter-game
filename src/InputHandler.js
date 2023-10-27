@@ -107,7 +107,7 @@ export default class InputHandler {
         this.game.player.shootInterval = 60
         this.game.player.reloadInterval = 1500
         this.game.player.autoFire = true
-        //this.game.player.gunImg = document.getElementById('smg')
+        this.game.player.gunImg = document.getElementById('smg')
       }
     })
 
@@ -129,7 +129,7 @@ export default class InputHandler {
         this.game.player.shootInterval = 300
         this.game.player.reloadInterval = 2200
         this.game.player.autoFire = true
-        //this.game.player.gunImg = document.getElementById('rifle')
+        this.game.player.gunImg = document.getElementById('rifle')
       }
     })
 
@@ -151,7 +151,7 @@ export default class InputHandler {
         this.game.player.shootInterval = 1000
         this.game.player.reloadInterval = 2400
         this.game.player.autoFire = false
-        //this.game.player.gunImg = document.getElementById('sniper')
+        this.game.player.gunImg = document.getElementById('sniper')
       }
     })
   }
