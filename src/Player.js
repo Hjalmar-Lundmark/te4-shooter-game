@@ -4,7 +4,7 @@ export default class Player {
   constructor(game) {
     this.game = game
     this.width = 32
-    this.height = 64
+    this.height = 48
     this.x = this.game.width / 2 - this.width / 2
     this.y = this.game.height / 2 - this.height / 2
 
@@ -93,7 +93,7 @@ export default class Player {
   }
 
   draw(context) {
-    context.fillStyle = '#f00'
+    context.fillStyle = '#0ff'
     context.fillRect(this.x, this.y, this.width, this.height)
     if (this.game.debug) {
       context.strokeStyle = '#000'
@@ -148,6 +148,10 @@ export default class Player {
   }
 
   shotgunProj(angle) {
+    let shotgunProjSpeed = 400
+    let shotgunProjDamage = 1
+    let shotgunProjPierce = 1
+    let shotgunProjTimeout = 1000
     this.projectiles.push(
       new Projectile(
         this.game,
@@ -156,10 +160,10 @@ export default class Player {
         10,
         4,
         angle,
-        400,
-        1,
-        1,
-        1000
+        shotgunProjSpeed,
+        shotgunProjDamage,
+        shotgunProjPierce,
+        shotgunProjTimeout
       ),
       new Projectile(
         this.game,
@@ -168,10 +172,10 @@ export default class Player {
         10,
         4,
         angle + 0.1,
-        400,
-        1,
-        1,
-        1000
+        shotgunProjSpeed,
+        shotgunProjDamage,
+        shotgunProjPierce,
+        shotgunProjTimeout
       ),
       new Projectile(
         this.game,
@@ -180,10 +184,10 @@ export default class Player {
         10,
         4,
         angle - 0.1,
-        400,
-        1,
-        1,
-        1000
+        shotgunProjSpeed,
+        shotgunProjDamage,
+        shotgunProjPierce,
+        shotgunProjTimeout
       ),
       new Projectile(
         this.game,
@@ -192,10 +196,10 @@ export default class Player {
         10,
         4,
         angle + 0.05,
-        400,
-        1,
-        1,
-        1000
+        shotgunProjSpeed,
+        shotgunProjDamage,
+        shotgunProjPierce,
+        shotgunProjTimeout
       ),
       new Projectile(
         this.game,
@@ -204,10 +208,10 @@ export default class Player {
         10,
         4,
         angle - 0.05,
-        400,
-        1,
-        1,
-        1000
+        shotgunProjSpeed,
+        shotgunProjDamage,
+        shotgunProjPierce,
+        shotgunProjTimeout
       )
     )
   }
@@ -224,7 +228,7 @@ export default class Player {
         500,
         1,
         0,
-        1000
+        1200
       )
     )
   }
@@ -252,7 +256,7 @@ export default class Player {
         this.game,
         this.x + this.width / 2,
         this.y + this.height / 2,
-        25,
+        40,
         10,
         angle,
         700,

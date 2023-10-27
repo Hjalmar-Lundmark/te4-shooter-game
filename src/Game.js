@@ -72,6 +72,7 @@ export default class Game {
             this.player.lives++
           } else if (enemy.type === 'boss') {
             this.points += 10
+            this.enemyInterval += 10
           }
         }
         this.player.projectiles.forEach((projectile) => {

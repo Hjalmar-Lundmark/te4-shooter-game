@@ -25,7 +25,10 @@ export default class Projectile {
 
     if (this.x > this.game.width || this.x < 0 || this.y > this.game.height || this.y < 0) {
       this.markedForDeletion = true
+    } else if (this.timeout <= 0) {
+      this.markedForDeletion = true
     }
+    this.timeout -= deltaTime
   }
 
   draw(context) {

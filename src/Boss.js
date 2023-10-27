@@ -10,7 +10,7 @@ export default class Boss extends Enemy {
         this.speed = 1;
         this.lives = 30;
         this.color = "red";
-        this.damage = 4;
+        this.damage = 5;
         this.type = "boss";
 
     }

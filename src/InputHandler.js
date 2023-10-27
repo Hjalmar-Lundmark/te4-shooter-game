@@ -102,9 +102,9 @@ export default class InputHandler {
 
         // weapon: smg
         this.game.player.weapon = 'smg'
-        this.game.player.maxAmmo = 35
-        this.game.player.ammo = 35
-        this.game.player.shootInterval = 75
+        this.game.player.maxAmmo = 45
+        this.game.player.ammo = 45
+        this.game.player.shootInterval = 60
         this.game.player.reloadInterval = 1500
         this.game.player.autoFire = true
         //this.game.player.gunImg = document.getElementById('smg')
