@@ -3,6 +3,7 @@ import Player from './Player.js'
 import UserInterface from './UserInterface.js'
 import Pumpkin from './Pumpkin.js'
 import Candy from './Candy.js'
+import Boss from './Boss.js'
 export default class Game {
   constructor(width, height, canvasPosition) {
     this.width = width
@@ -49,8 +50,8 @@ export default class Game {
         }
         if (Math.random() < 0.04) {
           this.enemies.push(new Candy(this, Math.random() * this.width, y))
-        } else if (false) {
-          // spawn a boss
+        } else if (this.gameTime > 30000 && Math.random() < 0.02) {
+          this.enemies.push(new Boss(this, x, y))
         } else {
           this.enemies.push(new Pumpkin(this, x, y))
         }
@@ -69,6 +70,8 @@ export default class Game {
           this.player.kills++
           if (enemy.type === 'candy') {
             this.player.lives++
+          } else if (enemy.type === 'boss') {
+            this.points += 10
           }
         }
         this.player.projectiles.forEach((projectile) => {
