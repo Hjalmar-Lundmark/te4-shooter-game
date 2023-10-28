@@ -18,7 +18,15 @@ export function setup(canvas) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     game.update(deltaTime)
     game.draw(ctx)
-    requestAnimationFrame(animate)
+    // requestAnimationFrame(animate);
+
+    // locks the fps to the set one, if it can reach it
+    // without this the game/timers go about twice as fast on 144 fps/Hz because the game is balanced to 60
+    // https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
+    let fps = 60
+    setTimeout(() => {
+    requestAnimationFrame(animate);
+  }, 1000 / fps);
   }
 
   animate(0)
