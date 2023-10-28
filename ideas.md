@@ -13,7 +13,7 @@
 4. Low ammo warning?
 5. Bar or symbols for health, ammo and such
 6. Screen goes red when hit?
-8. Skins, icons
+8. Skins, icons, graphics
 9. Change enemy spawnpoints
 9. enemy amount ramping up
 
@@ -30,5 +30,6 @@ setTimeout(() => {
     requestAnimationFrame(animate);
 }, 1000 / fps);
 ```
-Which kinda worked but had issues. One part of why I didn't go with this was that it wasn't identical to setting your refresh rate to 60 hz, the movement speed just wasn't the same as what I had balanced it to. Also if your computer couldn't react taht desired fps it would lag really weirdly. That code is located in the branch [LockFrames](https://github.com/Hjalmar-Lundmark/te4-shooter-game/tree/LockFrames). 
+Which kinda worked but had issues. One part of why I didn't go with this was that it wasn't identical to setting your refresh rate to 60 hz, the movement speed just wasn't the same as what I had balanced it to. Also if your computer couldn't react that desired fps it would lag really weirdly. That code is located in the branch [LockFrames](https://github.com/Hjalmar-Lundmark/te4-shooter-game/tree/LockFrames). 
 
+My second solution was to change player and enemy speed calculations to how it's written in projectile, with ``deltaTime`` in mind. This also means that I have more consistency and better readability when all movement variables use the same formula and sizing. 

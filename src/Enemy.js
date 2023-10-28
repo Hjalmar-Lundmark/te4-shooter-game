@@ -12,6 +12,7 @@ export default class Enemy {
     this.damage = 1
   }
 
+  // this code is useless, remove it?
   update() {
     this.y += this.speedY
     this.x += this.speedX
