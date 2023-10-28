@@ -23,6 +23,7 @@ export function setup(canvas) {
     // locks the fps to the set one, if it can reach it
     // without this the game/timers go about twice as fast on 144 fps/Hz because the game is balanced to 60
     // https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
+    // this adds consistency but feels bad
     let fps = 60
     setTimeout(() => {
     requestAnimationFrame(animate);
