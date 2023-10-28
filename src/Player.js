@@ -12,7 +12,7 @@ export default class Player {
 
     this.speedX = 0
     this.speedY = 0
-    this.maxSpeed = 6
+    this.maxSpeed = 360
 
     this.maxAmmo = 8
     this.ammo = 8
@@ -61,8 +61,8 @@ export default class Player {
       this.speedY = 0
     }
 
-    this.y += this.speedY
-    this.x += this.speedX
+    this.y += this.speedY * (deltaTime / 1000)
+    this.x += this.speedX * (deltaTime / 1000)
 
     //shoots
     if (this.game.keys.includes(' ') || this.game.keys.includes(0) && !this.game.paused) {

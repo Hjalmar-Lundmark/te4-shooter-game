@@ -16,3 +16,9 @@
 8. Skins, icons
 9. Change enemy spawnpoints
 9. enemy amount ramping up
+
+## Notable thoughts
+
+### Problem with different Hz monitors
+Most of the game was balanced around 60Hz because that was what I was using when coding the game, as timers, projectile-speed and such was based on ```deltaTime```(?).
+But then I ran into a problem when trying/coding the game on my 144 hz monitor at home and that was that niether the player or the enemies went with that logic, instead they
