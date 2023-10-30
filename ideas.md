@@ -16,6 +16,7 @@
 8. Skins, icons, graphics
 9. Change enemy spawnpoints
 9. Fix firerate on single fire weapons
+9. Restart button?
 
 ## Notable thoughts
 
