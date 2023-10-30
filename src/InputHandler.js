@@ -1,3 +1,5 @@
+import { setup } from './setup.js'
+
 export default class InputHandler {
   constructor(game) {
     this.game = game
@@ -154,5 +156,14 @@ export default class InputHandler {
         this.game.player.gunImg = document.getElementById('sniper')
       }
     })
+
+    window.addEventListener('keyup', (event) => {
+      if (
+        event.key === 'f' &&
+        this.game.gameOver
+      ) {
+        setup(document.querySelector('#canvas1'))
+      }
+    })  
   }
 }

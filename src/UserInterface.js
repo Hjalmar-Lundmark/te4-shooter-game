@@ -63,6 +63,18 @@ export default class UserInterface {
         this.game.width / 2,
         this.game.height / 2 - 20
       )
+      context.font = `20px ${this.fontFamily} `
+      context.fillText(
+        `You got ${this.game.points} points`,
+        this.game.width / 2,
+        this.game.height / 2 + 20
+      )
+      context.fillText(
+        `Press f to restart`,
+        this.game.width / 2,
+        this.game.height / 2 + 50
+      )
+      
     }
 
     if (this.game.paused && !this.game.gameOver && !this.game.start) {
