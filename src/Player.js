@@ -242,7 +242,7 @@ export default class Player {
         600,
         3,
         3,
-        1500
+        1800
       )
     )
   }
