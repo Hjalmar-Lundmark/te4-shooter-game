@@ -9,14 +9,11 @@
 5. Reload instead of ammo regen
 
 ## Bugs / todo
+[Kanban](https://github.com/users/Hjalmar-Lundmark/projects/2/views/2)
 1. Pierce weapons doing to much damage
-4. Low ammo warning?
-5. Bar or symbols for health, ammo and such
 6. Screen goes red when hit?
 8. Skins, icons, graphics
-9. Change enemy spawnpoints
 9. Fix firerate on single fire weapons
-9. Restart button?
 
 ## Notable thoughts
 

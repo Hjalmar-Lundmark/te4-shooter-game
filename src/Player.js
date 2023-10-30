@@ -112,6 +112,7 @@ export default class Player {
     )
     context.rotate(-angle)
     context.translate(-(this.x + this.width / 2), -(this.y + this.height / 2))
+    
     if (this.game.debug) {
       context.strokeStyle = '#000'
       context.strokeRect(this.x, this.y, this.width, this.height)
@@ -258,7 +259,7 @@ export default class Player {
         angle,
         700,
         5,
-        7,
+        9,
         2000
       )
     )
