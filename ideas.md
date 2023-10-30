@@ -35,3 +35,8 @@ Which kinda worked but had issues. One part of why I didn't go with this was tha
 
 My second solution was to change player and enemy speed calculations to how it's written in projectile, with ``deltaTime`` in mind. By including that in the calculations I can make sure that everything moves the same length even if it moves at different intervals on different screens. 
 This also means that I have more consistency and better readability when all movement variables use the same formula and sizing. 
+
+### Projectiles pierce stat
+Pierce is a stat I've that determines how many enemies a projectile can pierce before it disappears. But there exists one issue with how I've implemed it and that is that it can pierce the same enemy multiple times. 
+
+I'm not sure how to fix that issue though. It could work with a timer that the projectile must wait a set amount of milliseconds before it can deal damage again but that could bring issues with tightly packed enemies where the projectile doesn't hit everything it's supposed to. Another solution could be to add data into the projectile that tells it what it has hit and then check that data before hitting again. I have decided to not fix this issue for now and instead balance the game around it.
