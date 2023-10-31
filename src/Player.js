@@ -33,6 +33,10 @@ export default class Player {
     if (this.lives <= 0) {
       this.game.gameOver = true
       this.game.paused = true
+      if (this.game.points > this.game.highscore) {
+        this.game.highscore = this.game.points
+        localStorage.setItem('highscore', this.game.highscore)
+      }
     }
 
     this.shootTimer += deltaTime

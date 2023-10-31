@@ -19,6 +19,9 @@ export default class UserInterface {
     context.fillText(`Time: ${(this.game.gameTime * 0.001).toFixed(1)} `, 20, 60)
     context.fillText(`Kills: ${this.game.player.kills} `, 20, 90)
     context.fillText(`Points: ${this.game.points} `, 20, 120)
+    if (this.game.highscore > 0) {
+      context.fillText(`Highscore: ${this.game.highscore} `, 20, 150)
+    }
 
     let x = ''
     for (let i = 0; i < this.game.player.ammo; i++) {

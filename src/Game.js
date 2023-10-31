@@ -20,6 +20,8 @@ export default class Game {
     this.debug = false
     this.gameTime = 0
     this.points = 0
+    this.highscore = parseInt(localStorage.getItem('highscore')) || 0
+
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 500
