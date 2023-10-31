@@ -79,7 +79,7 @@ export default class Game {
         }
         this.player.projectiles.forEach((projectile) => {
           if (this.checkCollision(projectile, enemy)) {
-            if (enemy.lives > 1) {
+            if (enemy.lives > projectile.damage) {
               enemy.lives -= projectile.damage
             } else {
               enemy.markedForDeletion = true
