@@ -19,7 +19,7 @@ export default class Player {
     this.weapon = 'shotgun' // shotgun, smg, rifle, sniper, ...
     this.autoFire = false
     this.shootTimer = 0
-    this.shootInterval = 400
+    this.shootInterval = 550
     this.gunImg = document.getElementById('shotgun')
     this.reloading = false
     this.reloadTimer = 0
@@ -149,7 +149,7 @@ export default class Player {
     let shotgunProjSpeed = 400
     let shotgunProjDamage = 1
     let shotgunProjPierce = 1
-    let shotgunProjTimeout = 1000
+    let shotgunProjTimeout = 1100
     this.projectiles.push(
       new Projectile(
         this.game,
