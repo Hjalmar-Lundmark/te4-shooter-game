@@ -6,7 +6,6 @@ export default class Enemy {
     this.speedX = 0
     this.speedY = 0
     this.markedForDeletion = false
-    this.color = color
     this.type = 'enemy'
     //this.img = document.getElementById('ghost')
 
@@ -23,8 +22,7 @@ export default class Enemy {
 
   draw(context) {
     context.fillStyle = this.color
-    //context.fillRect(this.x, this.y, this.width, this.height)
-    context.drawImage(this.img, 0, 0, 32, 48, this.x, this.y, this.width, this.height)
+    context.drawImage(this.img, this.x, this.y, this.width, this.height)
 
     if (this.game.debug) {
       context.strokeRect(this.x, this.y, this.width, this.height)

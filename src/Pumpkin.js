@@ -9,7 +9,6 @@ export default class Pumpkin extends Enemy {
     this.y = y
     this.speed = 120
     this.lives = Math.floor(Math.random() * 3) + 1
-    this.color = 'transparent'
     this.img = document.getElementById('ghost')
   }
 

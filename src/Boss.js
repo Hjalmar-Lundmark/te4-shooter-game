@@ -9,7 +9,6 @@ export default class Boss extends Enemy {
         this.y = y;
         this.speed = 60;
         this.lives = 30;
-        this.color = "transparent";
         this.damage = 5;
         this.type = "boss";
         this.img = document.getElementById("boss");
