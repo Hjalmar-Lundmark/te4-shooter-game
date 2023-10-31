@@ -8,7 +8,7 @@
 4. Explosives?
 5. Reload instead of ammo regen
 
-Graphics by [Ismartal](https://ismartal.itch.io/2d-animated-halloween-characters), [Bdragon1727](https://bdragon1727.itch.io/items-and-traps-16x16-pixel) and [Free game assets](https://free-game-assets.itch.io/parallax-halloween-2d-game-backgrounds). 
+Graphics by [Ismartal](https://ismartal.itch.io/2d-animated-halloween-characters), [Bdragon1727](https://bdragon1727.itch.io/items-and-traps-16x16-pixel), [Penzilla](https://penzilla.itch.io/protagonist-character) and [Free game assets](https://free-game-assets.itch.io/parallax-halloween-2d-game-backgrounds). 
 
 ## Bugs / todo
 [Kanban](https://github.com/users/Hjalmar-Lundmark/projects/2/views/2)

@@ -7,6 +7,7 @@ export default class Player {
     this.height = 48
     this.x = this.game.width / 2 - this.width / 2
     this.y = this.game.height / 2 - this.height / 2
+    this.img = document.getElementById('player')
 
     this.projectiles = []
 
@@ -98,7 +99,9 @@ export default class Player {
 
   draw(context) {
     context.fillStyle = '#0ff'
-    context.fillRect(this.x, this.y, this.width, this.height)
+    //context.fillRect(this.x, this.y, this.width, this.height)
+    context.drawImage(this.img, this.x, this.y, this.width, this.height)
+
     const dx = this.game.input.mouseX - (this.x + this.width / 2)
     const dy = this.game.input.mouseY - (this.y + this.height / 2)
     const maxLength = 60
