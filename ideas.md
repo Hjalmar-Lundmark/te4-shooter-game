@@ -8,6 +8,8 @@
 4. Explosives?
 5. Reload instead of ammo regen
 
+Graphics by [Ismartal](https://ismartal.itch.io/2d-animated-halloween-characters), [Pixxilandartstudio](https://pixxilandartstudio.itch.io/2d-pixel-art-undead-pumpking-sprites) and [Free game assets](https://free-game-assets.itch.io/parallax-halloween-2d-game-backgrounds). 
+
 ## Bugs / todo
 [Kanban](https://github.com/users/Hjalmar-Lundmark/projects/2/views/2)
 1. Pierce weapons doing to much damage
