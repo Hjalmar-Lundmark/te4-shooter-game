@@ -12,5 +12,6 @@ export default class Candy extends Enemy {
     this.color = '#0f0'
     this.type = 'candy'
     this.damage = 0
+    this.img = document.getElementById('candy')
   }
 }
