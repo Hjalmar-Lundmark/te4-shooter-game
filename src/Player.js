@@ -112,9 +112,9 @@ export default class Player {
     context.rotate(angle)
     context.drawImage(
       this.gunImg,
-      -80 / 2,
       -50 / 2,
-      80,
+      -50 / 2,
+      50,
       50
     )
     context.rotate(-angle)
