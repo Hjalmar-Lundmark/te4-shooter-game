@@ -23,3 +23,14 @@
   max-height: 100%;
   cursor: crosshair;
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.54);
+}
