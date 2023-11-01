@@ -271,4 +271,22 @@ export default class Player {
       )
     )
   }
+
+  // unused, couldn't get the hitboxes to work
+  laserProj(angle) {
+    this.projectiles.push(
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        1000,
+        10,
+        angle,
+        0,
+        1,
+        0,
+        100
+      )
+    )
+  }
 }
