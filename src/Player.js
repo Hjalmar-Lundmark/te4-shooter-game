@@ -231,7 +231,7 @@ export default class Player {
         4,
         angle + (Math.random() - Math.random()) * 0.6,
         500,
-        1,
+        1.5,
         0,
         1200
       )
