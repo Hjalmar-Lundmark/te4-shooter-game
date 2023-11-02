@@ -289,4 +289,36 @@ export default class Player {
       )
     )
   }
+
+  // grenade test
+  grenade(angle) {
+    this.projectiles.push(
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        10,
+        10,
+        angle,
+        200,
+        0,
+        100,
+        1000
+      )
+    )
+    this.projectiles.push(
+      new Projectile(
+        this.game,
+        this.x + this.width / 2,
+        this.y + this.height / 2,
+        100,
+        100,
+        angle,
+        0,
+        100,
+        100,
+        1000
+      )
+    )
+  }
 }
