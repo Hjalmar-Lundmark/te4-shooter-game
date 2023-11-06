@@ -103,7 +103,7 @@ export default class UserInterface {
       )
     } else if (this.game.pickupTimer > 0 && !this.game.gameOver) {
       context.fillStyle = 'lime'
-      context.globalAlpha = this.game.pickupTimer / 200
+      context.globalAlpha = this.game.pickupTimer / 300
       context.fillRect(
         0,
         0,
