@@ -30,7 +30,7 @@ export default class UserInterface {
     context.fillText('Ammo: ' + x, 20, this.game.height - 50)
 
     if (!this.game.player.reloading) {
-      context.fillText(`Press r to reload: ${this.game.player.reloadTimer} `, 20, this.game.height - 20)
+      context.fillText(`Press R to reload: ${this.game.player.reloadTimer} `, 20, this.game.height - 20)
     } else {
       context.fillText(`Reloading: ${((this.game.player.reloadInterval - this.game.player.reloadTimer) / 1000).toFixed(1)} `, 20, this.game.height - 20)
     }
@@ -73,11 +73,11 @@ export default class UserInterface {
         this.game.height / 2 + 20
       )
       context.fillText(
-        `Press f to restart`,
+        `Press F to restart`,
         this.game.width / 2,
         this.game.height / 2 + 50
       )
-      
+
     }
 
     if (this.game.paused && !this.game.gameOver && !this.game.start) {
