@@ -149,8 +149,21 @@ export default class UserInterface {
       context.fillText(
         'Choose weapon to start',
         this.game.width / 2,
+        this.game.height / 2 - 100
+      )
+      context.font = `23px ${this.fontFamily} `
+
+      context.fillText(
+        'WASD or Arrowkeys to move, mouse to aim, left mouse button or space to shoot, R to reload your weapon. ',
+        this.game.width / 2,
+        this.game.height / 2 - 50
+      )
+      context.fillText(
+        'Shoot the ghosts and live as long as possible. Reload your weapon when you\'re out of ammo. ',
+        this.game.width / 2,
         this.game.height / 2 - 20
       )
+
       context.font = `20px ${this.fontFamily} `
       context.fillStyle = 'green'
       context.fillRect(
