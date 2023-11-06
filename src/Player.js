@@ -42,11 +42,12 @@ export default class Player {
 
     this.shootTimer += deltaTime
 
-    if ((this.game.keys.includes('ArrowLeft') || this.game.keys.includes('a')) && this.x > 0) {
+    if ((this.game.keys.includes('ArrowLeft') || this.game.keys.includes('a') || this.game.keys.includes('A')) && this.x > 0) {
       this.speedX = -this.maxSpeed
     } else if (
       (this.game.keys.includes('ArrowRight') ||
-      this.game.keys.includes('d')) &&
+        this.game.keys.includes('d') ||
+        this.game.keys.includes('D')) &&
       this.x < this.game.width - this.width
     ) {
       this.speedX = this.maxSpeed
@@ -54,11 +55,12 @@ export default class Player {
       this.speedX = 0
     }
 
-    if ((this.game.keys.includes('ArrowUp') || this.game.keys.includes('w')) && this.y > 0) {
+    if ((this.game.keys.includes('ArrowUp') || this.game.keys.includes('w') || this.game.keys.includes('W')) && this.y > 0) {
       this.speedY = -this.maxSpeed
     } else if (
       (this.game.keys.includes('ArrowDown') ||
-      this.game.keys.includes('s')) &&
+        this.game.keys.includes('s') ||
+        this.game.keys.includes('S')) &&
       this.y < this.game.height - this.height
     ) {
       this.speedY = this.maxSpeed
@@ -74,7 +76,7 @@ export default class Player {
       this.shoot(this.game.input.mouseX, this.game.input.mouseY)
     }
 
-    if (this.game.keys.includes('r') && this.ammo < this.maxAmmo) {
+    if ((this.game.keys.includes('r') || this.game.keys.includes('R')) && this.ammo < this.maxAmmo) {
       this.reloading = true
     }
 
@@ -119,7 +121,7 @@ export default class Player {
     )
     context.rotate(-angle)
     context.translate(-(this.x + this.width / 2), -(this.y + this.height / 2))
-    
+
     if (this.game.debug) {
       context.strokeStyle = '#000'
       context.strokeRect(this.x, this.y, this.width, this.height)
