@@ -81,7 +81,7 @@ export default class InputHandler {
         this.game.start &&
         this.game.input.mouseX > this.game.width / 2 - 475 &&
         this.game.input.mouseX < this.game.width / 2 - 275 &&
-        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY > this.game.height / 2 &&
         this.game.input.mouseY < this.game.height / 2 + 50
       ) {
         this.game.start = false
@@ -96,7 +96,7 @@ export default class InputHandler {
         this.game.start &&
         this.game.input.mouseX > this.game.width / 2 - 225 &&
         this.game.input.mouseX < this.game.width / 2 - 25 &&
-        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY > this.game.height / 2 &&
         this.game.input.mouseY < this.game.height / 2 + 50
       ) {
         this.game.start = false
@@ -119,7 +119,7 @@ export default class InputHandler {
         this.game.start &&
         this.game.input.mouseX > this.game.width / 2 + 25 &&
         this.game.input.mouseX < this.game.width / 2 + 225 &&
-        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY > this.game.height / 2 &&
         this.game.input.mouseY < this.game.height / 2 + 50
       ) {
         this.game.start = false
@@ -141,7 +141,7 @@ export default class InputHandler {
         this.game.start &&
         this.game.input.mouseX > this.game.width / 2 + 275 &&
         this.game.input.mouseX < this.game.width / 2 + 475 &&
-        this.game.input.mouseY > this.game.height / 2 - 50 &&
+        this.game.input.mouseY > this.game.height / 2 &&
         this.game.input.mouseY < this.game.height / 2 + 50
       ) {
         this.game.start = false
@@ -164,6 +164,6 @@ export default class InputHandler {
       ) {
         setup(document.querySelector('#canvas1'))
       }
-    })  
+    })
   }
 }
