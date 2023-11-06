@@ -19,6 +19,8 @@ export default class Game {
     this.gravity = 1
     this.debug = false
     this.gameTime = 0
+    this.hitTimer = 0
+    this.pickupTimer = 0
     this.points = 0
     this.highscore = parseInt(localStorage.getItem('highscore')) || 0
 
@@ -33,6 +35,13 @@ export default class Game {
     if (!this.paused) {
       if (!this.gameOver) {
         this.gameTime += deltaTime
+      }
+
+      if (this.hitTimer > 0) {
+        this.hitTimer--
+      }
+      if (this.pickupTimer > 0) {
+        this.pickupTimer--
       }
 
       // calculates points
@@ -67,15 +76,18 @@ export default class Game {
       this.enemies.forEach((enemy) => {
         enemy.update(deltaTime, this.player)
         if (this.checkCollision(this.player, enemy)) {
-          this.player.lives -= enemy.damage
-          enemy.markedForDeletion = true
-          this.player.kills++
-          if (enemy.type === 'candy') {
+          if (enemy.type !== 'candy') {
+            this.player.lives -= enemy.damage
+            this.player.kills++
+            this.hitTimer = 50
+            if (enemy.type === 'boss') {
+              this.enemyInterval += 10
+            }
+          } else if (enemy.type === 'candy') {
             this.player.lives++
-          } else if (enemy.type === 'boss') {
-            this.points += 10
-            this.enemyInterval += 10
+            this.pickupTimer = 50
           }
+          enemy.markedForDeletion = true
         }
         this.player.projectiles.forEach((projectile) => {
           if (this.checkCollision(projectile, enemy)) {

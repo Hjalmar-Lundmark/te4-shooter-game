@@ -92,6 +92,26 @@ export default class UserInterface {
       )
     }
 
+    if (this.game.hitTimer > 0 && !this.game.gameOver) {
+      context.fillStyle = 'red'
+      context.globalAlpha = this.game.hitTimer / 200
+      context.fillRect(
+        0,
+        0,
+        this.game.width,
+        this.game.height
+      )
+    } else if (this.game.pickupTimer > 0 && !this.game.gameOver) {
+      context.fillStyle = 'lime'
+      context.globalAlpha = this.game.pickupTimer / 200
+      context.fillRect(
+        0,
+        0,
+        this.game.width,
+        this.game.height
+      )
+    }
+
     // debug
     if (this.game.debug) {
       context.font = `15px Arial`
