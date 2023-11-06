@@ -138,7 +138,7 @@ export default class UserInterface {
       context.fillStyle = 'white'
       context.globalAlpha = 1
       context.font = `50px ${this.fontFamily} `
-      context.fillStyle = 'orange'
+      context.fillStyle = '#F07C00' // orange
       context.fillRect(
         0,
         0,
