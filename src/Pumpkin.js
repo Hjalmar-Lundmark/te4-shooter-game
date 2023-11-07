@@ -9,7 +9,7 @@ export default class Pumpkin extends Enemy {
     this.y = y
     this.speed = 120
     this.lives = Math.floor(Math.random() * 3) + 1
-    this.img = document.getElementById('ghost')
+    this.img = document.getElementById('ghost1')
   }
 
   update(deltaTime, player) {
@@ -20,5 +20,16 @@ export default class Pumpkin extends Enemy {
     const speedY = (dy / distance) * this.speed // calculate the y speed towards the player
     this.x += speedX * (deltaTime / 1000) // move the enemy towards the player on the x axis
     this.y += speedY * (deltaTime / 1000) // move the enemy towards the player on the y axis
+    if (this.frameTimer > this.frameInterval) {
+      if (this.frame >= 4) {
+        this.frame = 1
+      } else {
+        this.frame += 1
+      }
+      this.img = document.getElementById(`ghost${this.frame}`)
+      this.frameTimer = 0
+    } else {
+      this.frameTimer += deltaTime
+    }
   }
 }

@@ -7,9 +7,12 @@ export default class Enemy {
     this.speedY = 0
     this.markedForDeletion = false
     this.type = 'enemy'
-    //this.img = document.getElementById('ghost')
 
     this.damage = 1
+
+    this.frame = 1
+    this.frameTimer = 0
+    this.frameInterval = 80
   }
 
   // this code is useless, remove it?

@@ -23,6 +23,7 @@ export default class Game {
     this.pickupTimer = 0
     this.points = 0
     this.highscore = parseInt(localStorage.getItem('highscore')) || 0
+    this.firstBoss = false
 
     this.enemies = []
     this.enemyTimer = 0
@@ -61,8 +62,9 @@ export default class Game {
         }
         if (Math.random() < 0.04) {
           this.enemies.push(new Candy(this, Math.random() * this.width, y))
-        } else if (this.gameTime > 30000 && Math.random() < 0.02) {
+        } else if ((this.gameTime > 40000 && Math.random() < 0.02) || (this.gameTime > 30000 && !this.firstBoss)) {
           this.enemies.push(new Boss(this, x, y))
+          this.firstBoss = true
         } else {
           this.enemies.push(new Pumpkin(this, x, y))
         }
