@@ -101,7 +101,6 @@ export default class Player {
 
   draw(context) {
     context.fillStyle = '#0ff'
-    //context.fillRect(this.x, this.y, this.width, this.height)
     context.drawImage(this.img, this.x, this.y, this.width, this.height)
 
     const dx = this.game.input.mouseX - (this.x + this.width / 2)
