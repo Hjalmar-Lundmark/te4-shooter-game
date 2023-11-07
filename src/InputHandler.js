@@ -164,7 +164,7 @@ export default class InputHandler {
 
     window.addEventListener('keyup', (event) => {
       if (
-        event.key === 'f' &&
+        (event.key === 'f' || event.key === 'F') &&
         this.game.gameOver
       ) {
         setup(document.querySelector('#canvas1'))
