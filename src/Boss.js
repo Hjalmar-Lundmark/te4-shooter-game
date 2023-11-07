@@ -23,6 +23,9 @@ export default class Boss extends Enemy {
     const speedY = (dy / distance) * this.speed // calculate the y speed towards the player
     this.x += speedX * (deltaTime / 1000) // move the enemy towards the player on the x axis
     this.y += speedY * (deltaTime / 1000) // move the enemy towards the player on the y axis
+    if (speedX > 0) this.flip = true
+    if (speedX < 0) this.flip = false
+
     if (this.frameTimer > this.frameInterval) {
       if (this.frame >= 4) {
         this.frame = 1

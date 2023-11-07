@@ -13,6 +13,7 @@ export default class Enemy {
     this.frame = 1
     this.frameTimer = 0
     this.frameInterval = 80
+    this.flip = false
   }
 
   // this code is useless, remove it?
@@ -25,7 +26,13 @@ export default class Enemy {
 
   draw(context) {
     context.fillStyle = this.color
-    context.drawImage(this.img, this.x, this.y, this.width, this.height)
+
+    if (this.flip) {
+      context.save()
+      context.scale(-1, 1)
+    }
+
+    context.drawImage(this.img, this.flip ? this.x * -1 - this.width : this.x, this.y, this.width, this.height)
 
     if (this.game.debug) {
       context.strokeRect(this.x, this.y, this.width, this.height)
@@ -36,5 +43,7 @@ export default class Enemy {
       context.fillText(`x: ${this.x.toFixed()}`, this.x + 20, this.y - 5)
       context.fillText(`y: ${this.y.toFixed()}`, this.x + 20, this.y - 20)
     }
+
+    context.restore()
   }
 }
