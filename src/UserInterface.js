@@ -94,7 +94,7 @@ export default class UserInterface {
 
     if (this.game.hitTimer > 0 && !this.game.gameOver) {
       context.fillStyle = 'red'
-      context.globalAlpha = this.game.hitTimer / 200
+      context.globalAlpha = this.game.hitTimer / 250
       context.fillRect(
         0,
         0,

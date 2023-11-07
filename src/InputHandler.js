@@ -168,6 +168,7 @@ export default class InputHandler {
         this.game.gameOver
       ) {
         setup(document.querySelector('#canvas1'))
+        this.game.gameOver = false
       }
     })
   }
