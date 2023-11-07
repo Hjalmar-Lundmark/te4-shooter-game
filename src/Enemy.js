@@ -12,7 +12,7 @@ export default class Enemy {
 
     this.frame = 1
     this.frameTimer = 0
-    this.frameInterval = 80
+    this.frameInterval = 100
     this.flip = false
   }
 
@@ -27,13 +27,6 @@ export default class Enemy {
   draw(context) {
     context.fillStyle = this.color
 
-    if (this.flip) {
-      context.save()
-      context.scale(-1, 1)
-    }
-
-    context.drawImage(this.img, this.flip ? this.x * -1 - this.width : this.x, this.y, this.width, this.height)
-
     if (this.game.debug) {
       context.strokeRect(this.x, this.y, this.width, this.height)
       context.fillStyle = 'black'
@@ -43,6 +36,13 @@ export default class Enemy {
       context.fillText(`x: ${this.x.toFixed()}`, this.x + 20, this.y - 5)
       context.fillText(`y: ${this.y.toFixed()}`, this.x + 20, this.y - 20)
     }
+
+    if (this.flip) {
+      context.save()
+      context.scale(-1, 1)
+    }
+
+    context.drawImage(this.img, this.flip ? this.x * -1 - this.width : this.x, this.y, this.width, this.height)
 
     context.restore()
   }
