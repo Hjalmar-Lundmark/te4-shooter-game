@@ -95,7 +95,7 @@ export default class Game {
           if (this.checkCollision(projectile, enemy)) {
             if (enemy.lives > projectile.damage) {
               enemy.lives -= projectile.damage
-            } else {
+            } else if (!enemy.markedForDeletion) {
               enemy.markedForDeletion = true
               this.player.kills++
             }
