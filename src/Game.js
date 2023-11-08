@@ -69,7 +69,7 @@ export default class Game {
           this.enemies.push(new Pumpkin(this, x, y))
         }
         this.enemyTimer = 0
-        this.enemyInterval -= 0.5 // maybe lower this a little
+        this.enemyInterval -= 0.4 // maybe lower this a little
       } else {
         this.enemyTimer += deltaTime
       }
@@ -82,9 +82,6 @@ export default class Game {
             this.player.lives -= enemy.damage
             this.player.kills++
             this.hitTimer = 50
-            if (enemy.type === 'boss') {
-              this.enemyInterval += 10
-            }
           } else if (enemy.type === 'candy') {
             this.player.lives++
             this.pickupTimer = 50
