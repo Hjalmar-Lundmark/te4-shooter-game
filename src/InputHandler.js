@@ -151,8 +151,9 @@ export default class InputHandler {
     window.addEventListener('keyup', (event) => {
       if (
         (event.key === 'f' || event.key === 'F') &&
-        this.game.gameOver
+        this.game.gameOver && !this.game.start && this.game.paused
       ) {
+        this.game = '';
         setup(document.querySelector('#canvas1'))
         this.game.gameOver = false
       }
