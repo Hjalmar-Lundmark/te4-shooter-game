@@ -48,7 +48,7 @@ export default class Game {
       }
 
       // calculates points
-      this.points = ((this.player.kills * 11 + this.gameTime / 950) / 2.38 + 22 - this.player.maxAmmo).toFixed(0)
+      this.points = ((this.player.kills * 11 + this.gameTime / 950) / 2.38).toFixed(0)
 
       if (this.enemyTimer > this.enemyInterval) {
         let x = Math.random() < 0.5 ? 0 : this.width // spawn on left or right edge
