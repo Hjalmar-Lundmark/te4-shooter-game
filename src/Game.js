@@ -4,6 +4,7 @@ import UserInterface from './UserInterface.js'
 import Pumpkin from './Pumpkin.js'
 import Candy from './Candy.js'
 import Boss from './Boss.js'
+import Sound from './Sound.js'
 export default class Game {
   constructor(width, height, canvasPosition) {
     this.width = width
@@ -30,6 +31,7 @@ export default class Game {
     this.enemyInterval = 500
 
     this.player = new Player(this)
+    this.sound = new Sound(this)
   }
 
   update(deltaTime) {
@@ -80,6 +82,7 @@ export default class Game {
         if (this.checkCollision(this.player, enemy)) {
           if (enemy.type !== 'candy') {
             this.player.lives -= enemy.damage
+            this.sound.playDamageSound()
             this.player.kills++
             this.hitTimer = 50
           } else if (enemy.type === 'candy') {
