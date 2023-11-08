@@ -82,7 +82,7 @@ export default class Game {
         if (this.checkCollision(this.player, enemy)) {
           if (enemy.type !== 'candy') {
             this.player.lives -= enemy.damage
-            this.sound.playDamageSound()
+            //this.sound.playDamageSound() // sound for taking damage
             this.player.kills++
             this.hitTimer = 50
           } else if (enemy.type === 'candy') {
