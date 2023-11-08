@@ -179,8 +179,8 @@ export default class InputHandler {
     this.game.paused = false
     // weapon: rifle
     this.game.player.weapon = 'rifle'
-    this.game.player.maxAmmo = 15
-    this.game.player.ammo = 15
+    this.game.player.maxAmmo = 20
+    this.game.player.ammo = 20
     this.game.player.shootInterval = 300
     this.game.player.reloadInterval = 2200
     this.game.player.autoFire = true
