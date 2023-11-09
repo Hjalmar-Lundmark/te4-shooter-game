@@ -12,10 +12,6 @@ Graphics by [Ismartal](https://ismartal.itch.io/2d-animated-halloween-characters
 
 ## Bugs / todo
 [Kanban](https://github.com/users/Hjalmar-Lundmark/projects/2/views/2)
-1. Pierce weapons doing to much damage
-6. Screen goes red when hit?
-8. Skins, icons, graphics
-9. Fix firerate on single fire weapons
 
 ## Notable thoughts
 
