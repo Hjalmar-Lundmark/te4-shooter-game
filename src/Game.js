@@ -28,7 +28,7 @@ export default class Game {
 
     this.enemies = []
     this.enemyTimer = 0
-    this.enemyInterval = 500
+    this.enemyInterval = 550
 
     this.player = new Player(this)
     this.sound = new Sound(this)
