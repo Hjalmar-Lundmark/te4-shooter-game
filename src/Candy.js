@@ -8,7 +8,7 @@ export default class Candy extends Enemy {
     this.x = x
     this.y = y
     this.speed = 0
-    this.lives = 10
+    this.lives = 20
     this.type = 'candy'
     this.damage = 0
     this.img = document.getElementById('candy')
