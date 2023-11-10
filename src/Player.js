@@ -249,7 +249,7 @@ export default class Player {
         6,
         angle,
         600,
-        3,
+        2,
         3,
         1800
       )
